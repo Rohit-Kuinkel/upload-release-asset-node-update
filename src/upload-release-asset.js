@@ -2,7 +2,8 @@ const core = require('@actions/core');
 const { GitHub } = require('@actions/github');
 const fs = require('fs');
 
-async function run() {
+async function run() 
+{
   try {
     // Get authenticated GitHub client (Ocktokit): https://github.com/actions/toolkit/tree/master/packages/github#usage
     const github = new GitHub(process.env.GITHUB_TOKEN);
@@ -36,7 +37,8 @@ async function run() {
 
     // Set the output variable for use by other actions: https://github.com/actions/toolkit/tree/master/packages/core#inputsoutputs
     core.setOutput('browser_download_url', browserDownloadUrl);
-  } catch (error) {
+  } 
+  catch (error) {
     core.setFailed(error.message);
   }
 }
